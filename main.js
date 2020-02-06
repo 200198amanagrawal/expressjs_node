@@ -6,7 +6,7 @@ app.use("/static",express.static("public"));//faking the url of image and css in
 app.get("/",(req,res)=>{
    res.sendFile(__dirname+"/index.html");
 })
-app.get("/user/:id/book/:bookid",(req,res)=>{
-    res.send("Hello users with id=>"+req.params.id+" and book id=>"+req.params.bookid);// call it with http://localhost:3000/user/3/bookid/4
+app.get("/user/:id?/book/:bookid?",(req,res)=>{
+    res.send("Hello users with id=>"+req.params.id+" and book id=>"+req.params.bookid);//? makes it optional for params call it with http://localhost:3000/user/3/bookid/4
 })
 app.listen(3000);
