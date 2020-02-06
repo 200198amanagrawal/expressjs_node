@@ -2,7 +2,7 @@ const express=require("express");
 const fs=require("fs");
 const data=fs.readFileSync(__dirname+"/hello.txt","utf-8");
 const app=express();
-app.use(express.static("public"));//in express js the css and image are loaded by making our express as static 
+app.use("/static",express.static("public"));//faking the url of image and css in order to ensure more saftey. 
 app.get("/",(req,res)=>{
    res.sendFile(__dirname+"/index.html");
 })
